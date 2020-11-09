@@ -5,6 +5,7 @@ module.exports = {
     description: `Technical blog`,
     author: `@malsha`,
   },
+  pathPrefix: "/bitsploit",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
