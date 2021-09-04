@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 export default function IndexPage ({data}) {
@@ -15,12 +14,12 @@ export default function IndexPage ({data}) {
                     .map(({ node: post }) => {
                         return (
                             <div className="postPreview" key={post.id}>
-                                <h2>
-                                    <Link
-                                        to={post.frontmatter.path}
-                                        className={'postPreviewTitle'}>{post.frontmatter.title}</Link>
-                                </h2>
-                                <h3>{post.frontmatter.date}</h3>
+                                <Link to={post.frontmatter.path}
+                                      className={'postPreviewTitle'}>{post.frontmatter.title}</Link>
+                                <p className={'postPreviewDate'}>{post.frontmatter.date}</p>
+                                {post.frontmatter.tags.map(tag => (
+                                    <div className={'postTag'} key={tag}>{tag}</div>
+                                ))}
                                 <p>{post.excerpt}</p>
                             </div>
                         )
@@ -28,10 +27,6 @@ export default function IndexPage ({data}) {
             </div>
 
             <SEO title="Home" />
-
-            <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-                <Image />
-            </div>
         </Layout>
     )
 }
@@ -47,6 +42,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            tags
           }
         }
       }

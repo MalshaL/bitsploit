@@ -2,10 +2,15 @@
 title: Running Clustering Tests for WSO2 Message Broker
 date: 2019-10-08
 path: /running-clustering-tests-for-wso2-mb
+tags: 
+    - Message Broker
+    - WSO2
 ---
 A cluster is a group of nodes each running an instance of a product. This cluster of nodes act as a single instance, dividing up the work among the nodes, improving performance and reliability.
 
 In this post, let us setup a cluster of two nodes running WSO2 Message Broker 3.0.0 and run clustering tests on them. These steps can be used to setup a cluster of MB 3.2.0 as well.
+
+![img alt](https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 
 Configure the `<MB_HOME>/repository/conf/broker.xml` file as described in steps 2 and 3 in WSO2 documentation here.
 

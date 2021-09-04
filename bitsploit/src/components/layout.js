@@ -14,6 +14,7 @@ import "fontsource-lato";
 
 import Header from "./header"
 import "./layout.css"
+import "./prism-okaidia-modified.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
