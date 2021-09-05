@@ -2,11 +2,12 @@
 title: The From-scratch guide to building a static website with Gatsby - and serving it on GitHub pages
 date: 2020-11-11
 path: /building-with-gatsby-for-github-pages
+excerpt: In this day and age, it seems everyone has a blog. And there are many platforms that will help you build one.
+image: https://user-images.githubusercontent.com/10103699/98751728-c354ea00-2414-11eb-8ae6-06cfef2f6bb5.jpg
 tags: 
     - Gatsby
     - GitHub Pages
     - Guides
-excerpt: 
 ---
 
 ![into-img](https://user-images.githubusercontent.com/10103699/98751728-c354ea00-2414-11eb-8ae6-06cfef2f6bb5.jpg)

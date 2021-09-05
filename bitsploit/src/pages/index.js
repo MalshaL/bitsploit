@@ -14,13 +14,18 @@ export default function IndexPage ({data}) {
                     .map(({ node: post }) => {
                         return (
                             <div className="postPreview" key={post.id}>
-                                <Link to={post.frontmatter.path}
-                                      className={'postPreviewTitle'}>{post.frontmatter.title}</Link>
-                                <p className={'postPreviewDate'}>{post.frontmatter.date}</p>
-                                {post.frontmatter.tags.map(tag => (
-                                    <div className={'postTag'} key={tag}>{tag}</div>
-                                ))}
-                                <p>{post.excerpt}</p>
+                                <div className="postPreviewImageDiv">
+                                    <img className="postPreviewImage" src={post.frontmatter.image} alt=""/>
+                                </div>
+                                <div className="postPreviewContent">
+                                    <Link to={post.frontmatter.path}
+                                          className={'postPreviewTitle'}>{post.frontmatter.title}</Link>
+                                    <p className={'postPreviewDate'}>{post.frontmatter.date}</p>
+                                    {post.frontmatter.tags.map(tag => (
+                                        <div className={'postTag'} key={tag}>{tag}</div>
+                                    ))}
+                                    <p className="postPreviewExcerpt">{post.frontmatter.excerpt}</p>
+                                </div>
                             </div>
                         )
                     })}
@@ -36,13 +41,14 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
           id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             path
             tags
+            excerpt
+            image
           }
         }
       }
