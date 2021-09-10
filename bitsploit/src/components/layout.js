@@ -13,6 +13,7 @@ import "fontsource-quicksand";
 import "fontsource-lato";
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 import "./prism-okaidia-modified.css"
 
@@ -32,12 +33,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className={'blogMain'}>
         <main>{children}</main>
-        <footer>
-          {/*© {new Date().getFullYear()}, Built with*/}
-          {/*{` `}*/}
-          {/*<a href="https://www.gatsbyjs.org">Gatsby</a>*/}
-        </footer>
       </div>
+        <Footer siteTitle={data.site.siteMetadata.title} />
     </>
   )
 }

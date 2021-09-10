@@ -14,6 +14,7 @@ export default function IndexPage ({data}) {
                     .map(({ node: post }) => {
                         return (
                             <div className="postPreview" key={post.id}>
+                                <Link to={post.frontmatter.path}>
                                 <div className="postPreviewImageDiv">
                                     <img className="postPreviewImage" src={post.frontmatter.image} alt=""/>
                                 </div>
@@ -25,7 +26,7 @@ export default function IndexPage ({data}) {
                                         <div className={'postTag'} key={tag}>{tag}</div>
                                     ))}
                                     <p className="postPreviewExcerpt">{post.frontmatter.excerpt}</p>
-                                </div>
+                                </div></Link>
                             </div>
                         )
                     })}

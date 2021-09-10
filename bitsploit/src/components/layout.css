@@ -630,10 +630,12 @@ pre tt:after {
 }
 
 .blogMain {
-  margin: -5% auto;
+  margin: -5% auto 5% auto;
   max-width: 80%;
   padding: -1.45rem 0 1.45rem;
   font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  /*font-family: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji', sans-serif;*/
 }
 
 .blogTitle {
@@ -685,9 +687,11 @@ pre tt:after {
 
 .postList {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .postPreview {
+  /*height: min-content;*/
   width: 30%;
   border: 2px solid #eaeaea;
   border-radius: 5px;
@@ -700,6 +704,10 @@ pre tt:after {
   border: 2px solid #b8b8b8;
   box-shadow: 0 50px 30px -40px rgba(0, 0, 0, .1);
   transform: translateY(-4px)
+}
+
+.postPreview>a:hover {
+  text-decoration: none;
 }
 
 .postPreviewImageDiv{
@@ -746,9 +754,12 @@ pre tt:after {
 
 .postPreviewExcerpt{
   font-size: 0.9rem;
+  color: black;
+  padding-top: 2%;
 }
 
 .postTag {
+  font-family: 'Quicksand', sans-serif;
   background-color: #69ada1;
   border-radius: 5px;
   padding: 0.5% 1%;
@@ -790,9 +801,14 @@ pre tt:after {
 
 .postContent>p>img {
   max-width: 100%;
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.postContent>h6 {
+  text-align: center;
+}
 
 .gatsby-highlight {
   background-color: #d5e8e4;
@@ -806,4 +822,10 @@ pre tt:after {
   padding: 0 0 0 2.8em;
   overflow: initial;
   font-size: 0.75em;
+}
+
+.blogFooter {
+  background-color: #c2c8c8;
+  font-size: 0.9rem;
+  padding: 1%;
 }
