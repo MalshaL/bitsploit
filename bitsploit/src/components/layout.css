@@ -691,7 +691,7 @@ pre tt:after {
 }
 
 .postPreview {
-  /*height: min-content;*/
+  height: 500px;
   width: 30%;
   border: 2px solid #eaeaea;
   border-radius: 5px;
@@ -711,7 +711,7 @@ pre tt:after {
 }
 
 .postPreviewImageDiv{
-  height: 30%;
+  height: 40%;
   width: 100%;
   margin-bottom: 5%;
 }
@@ -758,16 +758,29 @@ pre tt:after {
   padding-top: 2%;
 }
 
+.postPreviewTag {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #69ada1;
+  /*border-radius: 5px;*/
+  padding: 0.5% 3%;
+  display: inline-block;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #FAFDFC;
+}
+
 .postTag {
   font-family: 'Quicksand', sans-serif;
   background-color: #69ada1;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   padding: 0.5% 1%;
   display: inline-block;
   margin-right: 1%;
   margin-bottom: 1%;
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: normal;
   color: #FAFDFC;
 }
 
@@ -828,4 +841,9 @@ pre tt:after {
   background-color: #c2c8c8;
   font-size: 0.9rem;
   padding: 1%;
+}
+
+nav.pagination {
+  display: flex;
+  justify-content: space-between;
 }
