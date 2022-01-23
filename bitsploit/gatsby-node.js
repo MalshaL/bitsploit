@@ -8,6 +8,7 @@
 
 // programmatically create pages
 const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions
@@ -42,8 +43,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const postsPerPage = 6
     const numPages = Math.ceil(posts.length / postsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
+        let pagePath = i === 0 ? `/` : `/${i + 1}`
         createPage({
-            path: i === 0 ? `/` : `/${i + 1}`,
+            path: pagePath,
             component: path.resolve("./src/templates/post-list.js"),
             context: {
                 limit: postsPerPage,
