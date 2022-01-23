@@ -2,7 +2,7 @@
 title: A Simple Guide to using Git in Command Line
 date: 2015-12-13
 path: /using-git-in-cmd
-excerpt: Git is a powerful version control system that can be used to easily manage everything from small to large projects. However, newbies often find using Git a bit challenging. Here's the simple guide to using Git on Windows command line.
+excerpt: Using Git can be a bit challenging at the beginning. Here's a simple guide to using Git on Windows command line.
 image: https://user-images.githubusercontent.com/10103699/132891938-16fdb62e-5cf3-4a31-a5d0-a3f03452bc3d.jpeg
 tags: 
     - Git

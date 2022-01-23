@@ -11,7 +11,7 @@ const PostList = ({data, pageContext}) => {
     return (
         <Layout>
             <div className="gridContainer">
-                <div>
+                <div className="postListContainer">
                     <div className="postList">
                         {posts
                             .filter(post => post.node.frontmatter.title.length > 0)

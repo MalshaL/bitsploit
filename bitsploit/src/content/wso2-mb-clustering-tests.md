@@ -2,7 +2,7 @@
 title: Running Clustering Tests for WSO2 Message Broker
 date: 2019-10-08
 path: /running-clustering-tests-for-wso2-mb
-excerpt: In this post, let's setup a cluster of two nodes running WSO2 Message Broker 3.0.0 and run clustering tests on them. These steps can be used to setup a cluster of MB 3.2.0 as well.
+excerpt: In this post, let's setup a cluster of two nodes running WSO2 Message Broker 3.0.0 and run clustering tests on them.
 image: https://user-images.githubusercontent.com/10103699/132897232-38b6bf59-4b23-4c80-ab38-14c8b19c6d2e.png
 tags: 
     - Message Broker
