@@ -2,7 +2,7 @@
 title: Create a Doodle Background in Photoshop
 date: 2015-12-05
 path: /doodle-background-in-photoshop
-excerpt: Ever wanted to create a doodle like the background you see in WhatsApp? Here is the beginner's guide to make your own doodle in Photoshop.
+excerpt: A beginner's guide to make your own doodle in Photoshop.
 image: https://user-images.githubusercontent.com/10103699/132111988-a4ea6a7e-4764-4b5d-bd81-4b7ccbf39a01.png
 tags: 
     - Photoshop

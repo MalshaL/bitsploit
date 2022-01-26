@@ -17,7 +17,9 @@ export const Pagination = ({currentPage, pageCount}) => (
                     ← Newer posts
                 </Link>) :
             <span />}
-        <p className="pageItem2">Page {currentPage} of {pageCount}</p>
+        {pageCount > 1 ? (
+            <p className="pageItem2">Page {currentPage} of {pageCount}</p>
+        ) : <span />}
         {currentPage < pageCount ? (
                 <Link className="pageItem3"
                     title="Go to next page"

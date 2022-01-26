@@ -8,10 +8,10 @@ export default function Template({ data }) {
     const { frontmatter, html } = markdownRemark
     return (
         <Layout>
-            <div>
+            <div className={'postDiv'}>
                 <p className={'postTitle'}>{frontmatter.title}</p>
                 <p className={'postDate'}>{frontmatter.date}</p>
-                <div className={'tagList'}>
+                <div className={'postTagList'}>
                 {frontmatter.tags.map(tag => (
                     <div className={'postTag'} key={tag}>{tag}</div>
                 ))}

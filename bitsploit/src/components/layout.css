@@ -233,8 +233,8 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -250,8 +250,8 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -267,8 +267,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -284,8 +284,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -301,8 +301,8 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -318,8 +318,8 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -630,19 +630,21 @@ pre tt:after {
 }
 
 .blogMain {
-  margin: -5% auto 5% auto;
-  max-width: 80%;
-  padding: -1.45rem 0 1.45rem;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
+  background-color: rgba(158, 209, 200, 0.04);
+  padding: 5% 10%;
+  /*margin: 5% auto 5% auto;*/
+  /*max-width: 80%;*/
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-weight: 400;
   /*font-family: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji', sans-serif;*/
 }
 
 .blogTitle {
   font-family: 'Euphoria Script', sans-serif;
   font-weight: 400;
-  font-size: 4.5em;
-  padding: 5% 2% 1% 2%;
+  font-size: 5.5em;
+  padding: 4% 2% 2% 2%;
   text-align: center;
   margin-bottom: 0;
   background-image: url("../images/backg.png");
@@ -657,8 +659,8 @@ pre tt:after {
   text-decoration: none;
 }
 .blogNav {
-  margin: 0 auto 10%;
-  padding: 0 18%;
+  margin: 0 auto;
+  padding: 0 10%;
   background-color: #9ed1c8;
 }
 .navbar-light .navbar-nav .nav-link {
@@ -667,8 +669,9 @@ pre tt:after {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 0;
-  padding: 12% 20%;
+  margin: 0 5px 0 0;
+  padding: 12% 20% 8% 20%;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.4);
 }
 .navbar-light .navbar-nav .nav-link:hover {
   background-color: #FAFDFC;
@@ -687,30 +690,33 @@ pre tt:after {
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 70% 30%;
-  grid-gap: 4%;
+  grid-template-columns: 68% 29%;
+  grid-gap: 3%;
 }
 
 .postList {
+  min-height: 1520px;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 32% 32% 32%;
-  grid-gap: 2%;
+  column-gap: 3%;
+  row-gap: 2%;
   margin-bottom: 5%;
 }
 
 .postPreview {
-  /*height: 500px;*/
-  /*width: 45%;*/
-  border: 2px solid #eaeaea;
-  border-radius: 5px;
-  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 475px;
+  /*min-width: 380px;*/
+  /*border: 2px solid #eaeaea;*/
+  /*border-radius: 5px;*/
+  /*padding: 2%;*/
   /*margin-bottom: 5%;*/
   /*margin-right: 2%;*/
 }
 
 .postPreview:hover {
-  border: 2px solid #b8b8b8;
+  /*border: 2px solid #b8b8b8;*/
   box-shadow: 0 50px 30px -40px rgba(0, 0, 0, .1);
   transform: translateY(-4px)
 }
@@ -722,7 +728,7 @@ pre tt:after {
 .postPreviewImageDiv{
   height: 50%;
   width: 100%;
-  margin-bottom: 5%;
+  /*margin-bottom: 5%;*/
 }
 
 .postPreviewImage{
@@ -732,15 +738,16 @@ pre tt:after {
 }
 
 .postPreviewContent{
+  padding: 5%;
   /*width: 65%;*/
   /*padding-left: 5%;*/
 }
 
 .postPreviewTitle {
   color: black;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-weight: 500;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
 }
@@ -752,9 +759,9 @@ pre tt:after {
 
 .postPreviewDate {
   color: #7f7f7f;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.8rem;
   margin-top: 0.5rem;
@@ -762,13 +769,17 @@ pre tt:after {
 }
 
 .postPreviewExcerpt{
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 300;
   font-size: 0.9rem;
   color: black;
   padding-top: 2%;
 }
 
 .postPreviewTag {
-  font-family: 'Quicksand', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #69ada1;
   /*border-radius: 5px;*/
   padding: 0.5% 3%;
@@ -776,12 +787,22 @@ pre tt:after {
   margin-right: 2%;
   margin-bottom: 1%;
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 400;
   color: #FAFDFC;
 }
 
+.postPreviewTagText {
+  color: #FAFDFC;
+}
+
+.postPreviewTagText:hover {
+  color: black;
+  text-decoration: none;
+}
+
 .postTag {
-  font-family: 'Quicksand', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #69ada1;
   /*border-radius: 5px;*/
   padding: 0.5% 1%;
@@ -797,28 +818,44 @@ pre tt:after {
   margin-bottom: 4rem;
 }
 
+.postDiv {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .postTitle {
   color: black;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  text-align: center;
+  font-size: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 1.6rem;
+  /*font-size: 1.6rem;*/
   margin-bottom: 0.5rem;
 }
 
 .postDate {
-  color: black;
-  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: #7f7f7f;
+  text-align: center;
+  font-family: sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
-.postContent {
+.postTagList {
+  margin-bottom: 4rem;
+  text-align: center;
+}
 
+.postContent {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-weight: 400;
 }
 
 .postContent>p>img {
@@ -852,6 +889,16 @@ pre tt:after {
   padding: 1%;
 }
 
+.blogFooterSite {
+  color: #737373;
+  font-weight: 500;
+}
+
+.blogFooterSite:hover {
+  color: black;
+  text-decoration: none;
+}
+
 nav.pagination {
   display: grid;
   grid-template-columns: 32% 32% 32%;
@@ -860,12 +907,117 @@ nav.pagination {
 
 .pageItem1 {
   justify-self: start;
+  background-color: #69ada1;
+  padding: 3% 3%;
+  display: inline-block;
+  margin-bottom: 19%;
+  font-weight: 400;
+  color: #FAFDFC;
+  line-height: 1rem;
+}
+
+.pageItem1:hover {
+  color: black;
+  text-decoration: none;
 }
 
 .pageItem2 {
   justify-self: center;
+  padding-top: 3%;
 }
 
 .pageItem3 {
   justify-self: end;
+  background-color: #69ada1;
+  padding: 3% 3%;
+  display: inline-block;
+  margin-bottom: 19%;
+  font-weight: 400;
+  color: #FAFDFC;
+  line-height: 1rem;
+}
+
+.pageItem3:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar {
+  background-color: #d0e5e1;
+  margin-bottom: 40%;
+}
+
+.aboutSidebar {
+  background-color: #d0e5e1;
+  padding: 10%;
+}
+
+.authorHeading {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.sidebarHeading {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+}
+
+.sidebarContent {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: black;
+  text-align: center;
+}
+
+.authorImage{
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+  border-radius: 50%;
+  outline: 10px solid rgba(234, 234, 234, 0.7);
+  outline-offset: -10px;
+}
+
+.authorImageDiv{
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.tagCloud {
+  background-color: #d0e5e1;
+  padding: 8%;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  min-width: 150px;
+}
+
+.iconFace {
+  margin: 20% auto;
+}
+
+.socialLink {
+  background-color: #525659;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 5%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.socialLink:hover {
+  background-color: #6AADA1;
+}
+
+.headerIcons {
+  width: 140px;
 }

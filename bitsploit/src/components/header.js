@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav } from 'react-bootstrap';
+import {SocialIcons} from "./social-icons";
 
 const Header = ({ siteTitle }) => (
   <header className={'blogHeader'}>
@@ -16,6 +17,7 @@ const Header = ({ siteTitle }) => (
             <Nav.Link className={'blogNavLink'} as={Link} to="/">HOME</Nav.Link>
             <Nav.Link className={'blogNavLink'} as={Link} to="/about">ABOUT</Nav.Link>
         </Nav>
+            <SocialIcons className={'headerIcons'}/>
         </Navbar.Collapse>
     </Navbar>
   </header>

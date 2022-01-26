@@ -4,7 +4,7 @@ import React from "react"
 
 const Footer = ({ siteTitle }) => (
     <div className={'blogFooter'}>
-        Copyright © {new Date().getFullYear()} <Link to="/">{siteTitle}</Link>
+        Copyright © {new Date().getFullYear()} <Link className={'blogFooterSite'} to="/">{siteTitle}</Link>
     </div>
 )
 
