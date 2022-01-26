@@ -2,7 +2,7 @@ import React from "react"
 import {DiStackoverflow} from "react-icons/di";
 import {FiGithub, FiLinkedin} from "react-icons/fi";
 import { IconContext } from "react-icons";
-import {AiOutlineMedium} from "react-icons/ai";
+// import {AiOutlineMedium} from "react-icons/ai";
 
 export const SocialIcons = () => (
     <div className={'socialIcons'}>
@@ -21,10 +21,10 @@ export const SocialIcons = () => (
                 <DiStackoverflow className={"iconFace"}/>
             </IconContext.Provider>
         </a>
-        <a className={"socialLink"} href={"https://malsha.medium.com/"}>
-            <IconContext.Provider value={{ size: "1.3em", color: "rgba(255, 255, 255, 0.8)" }}>
-                <AiOutlineMedium className={"iconFace"}/>
-            </IconContext.Provider>
-        </a>
+        {/*<a className={"socialLink"} href={"https://malsha.medium.com/"}>*/}
+        {/*    <IconContext.Provider value={{ size: "1.3em", color: "rgba(255, 255, 255, 0.8)" }}>*/}
+        {/*        <AiOutlineMedium className={"iconFace"}/>*/}
+        {/*    </IconContext.Provider>*/}
+        {/*</a>*/}
     </div>
 );

@@ -997,7 +997,7 @@ nav.pagination {
 .socialIcons {
   display: flex;
   justify-content: center;
-  min-width: 200px;
+  min-width: 140px;
 }
 
 .iconFace {
