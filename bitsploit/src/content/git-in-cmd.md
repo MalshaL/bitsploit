@@ -7,6 +7,7 @@ image: https://user-images.githubusercontent.com/10103699/132891938-16fdb62e-5cf
 tags: 
     - Git
     - How to
+external: false
 ---
 Git is a powerful version control system that can be used to easily manage everything from small to large projects. 
 However, newbies often find using Git a bit challenging. Here's the simple guide to using Git on Windows command line.

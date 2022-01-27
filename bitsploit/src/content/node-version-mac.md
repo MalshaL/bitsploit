@@ -7,4 +7,5 @@ image: https://user-images.githubusercontent.com/10103699/151214846-d093f1fd-f47
 tags: 
     - Node.js
     - How To
+external: true
 ---

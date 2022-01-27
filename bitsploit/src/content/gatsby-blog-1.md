@@ -8,6 +8,7 @@ tags:
     - Gatsby
     - GitHub Pages
     - Guides
+external: false
 ---
 
 ![into-img](https://user-images.githubusercontent.com/10103699/98751728-c354ea00-2414-11eb-8ae6-06cfef2f6bb5.jpg)

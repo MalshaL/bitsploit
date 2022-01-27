@@ -6,6 +6,7 @@ excerpt: This post discusses some basic functions you'll come across while learn
 image: https://user-images.githubusercontent.com/10103699/133363842-a1d80d57-a9ab-4429-9782-4ca4bc508ac5.png
 tags: 
     - C++
+external: false
 ---
 These are some basic functions that you will come across while learning C++.
 

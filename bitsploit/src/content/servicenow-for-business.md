@@ -6,4 +6,5 @@ excerpt: What makes ServiceNow an ideal platform to build your business applicat
 image: https://user-images.githubusercontent.com/10103699/151215448-f1a2aa3c-f21f-4035-8ab1-615aeca705a3.jpeg
 tags: 
     - ServiceNow
+external: true
 ---

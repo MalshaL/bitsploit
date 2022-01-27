@@ -7,4 +7,6 @@ image: https://user-images.githubusercontent.com/10103699/151209779-b867c4b0-9b9
 tags: 
     - ELT
     - Data Integration
+external: true
 ---
+sgzdfbzsd

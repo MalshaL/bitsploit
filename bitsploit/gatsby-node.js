@@ -20,6 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               path
+              external
             }
           }
         }
@@ -36,11 +37,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: blogPostTemplate,
-            context: {} // additional data can be passed via context
-        })
+        if (node.frontmatter.external === 'false') {
+            createPage({
+                path: node.frontmatter.path,
+                component: blogPostTemplate,
+                context: {} // additional data can be passed via context
+            })
+        }
     })
 
     // Create blog-list pages

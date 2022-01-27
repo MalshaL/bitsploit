@@ -8,4 +8,6 @@ tags:
     - ELT
     - MySQL
     - Data Integration
+external: true
 ---
+zdfzdhdt

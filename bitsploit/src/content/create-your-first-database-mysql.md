@@ -6,6 +6,7 @@ excerpt: This post is a quick guide to create your first database using MySql Wo
 image: https://user-images.githubusercontent.com/10103699/133356975-64158712-42f1-4d2f-bb5e-6e62f0f4374a.png
 tags: 
     - How to
+external: false
 ---
 A database is one of the key components in a software system and thus, has to be designed with utmost care. If 
 you have only a limited knowledge of databases and MySql, creating your first database would be a bit challenging. 

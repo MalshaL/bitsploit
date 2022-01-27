@@ -7,6 +7,7 @@ image: https://user-images.githubusercontent.com/10103699/133362469-3869b02a-aea
 tags: 
     - Machine Learning
     - Data Mining
+external: false
 ---
 Anomaly Detection, also known as outlier detection, is about identifying the **not-normal** items or events in a dataset.
 

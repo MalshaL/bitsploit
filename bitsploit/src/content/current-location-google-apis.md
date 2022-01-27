@@ -6,6 +6,7 @@ excerpt: This post is a quick guide to how you can use Google API services in yo
 image: https://user-images.githubusercontent.com/10103699/133358388-7e60a6de-3a0e-40d5-b874-db7fe92fe886.jpeg
 tags: 
     - How to
+external: false
 ---
 You can easily use Google API services to enable your web application to get current location and places around.
 
