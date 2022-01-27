@@ -7,7 +7,6 @@ image: https://user-images.githubusercontent.com/10103699/132111988-a4ea6a7e-476
 tags: 
     - Photoshop
     - How to
-external: false
 ---
 ![intro_img](https://user-images.githubusercontent.com/10103699/132111988-a4ea6a7e-4764-4b5d-bd81-4b7ccbf39a01.png)
 

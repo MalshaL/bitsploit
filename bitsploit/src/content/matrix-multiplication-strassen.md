@@ -7,7 +7,6 @@ image: https://user-images.githubusercontent.com/10103699/133361947-bde10cb5-8c5
 tags: 
     - How to
     - C++
-external: false
 ---
 The standard matrix multiplication for an n x n matrix results in a time complexity with a factor of 3. This means 
 if you double the size of the matrix, you'll require eight times more time. Strassen's algorithm is one technique 

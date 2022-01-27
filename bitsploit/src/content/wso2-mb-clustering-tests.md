@@ -7,7 +7,6 @@ image: https://user-images.githubusercontent.com/10103699/132897232-38b6bf59-4b2
 tags: 
     - Message Broker
     - WSO2
-external: false
 ---
 A cluster is a group of nodes each running an instance of a product. This cluster of nodes act as a single instance, 
 dividing up the work among the nodes, improving performance and reliability.

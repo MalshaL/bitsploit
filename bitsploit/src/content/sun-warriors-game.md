@@ -6,7 +6,6 @@ excerpt: The Sun Warriors is a web based tank game application with a multiplaye
 image: https://user-images.githubusercontent.com/10103699/132902139-0aa4969c-4d25-4de0-a800-c46866ae9609.png
 tags: 
     - Project
-external: false
 ---
 ![game](https://user-images.githubusercontent.com/10103699/132902139-0aa4969c-4d25-4de0-a800-c46866ae9609.png)
 

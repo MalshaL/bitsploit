@@ -24,7 +24,6 @@ export default function Sidebar() {
         return [...new Set([].concat(...arr))];
     }
     const uniqueTags = mergeDedupe(allTags)
-    console.log(uniqueTags)
     return (
         <div className="sidebar">
             <div className="aboutSidebar">
