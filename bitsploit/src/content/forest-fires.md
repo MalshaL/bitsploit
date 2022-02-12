@@ -183,7 +183,8 @@ Area = FFMC + DC + Temperature + Temperature2 + FFMC2 + Wind2 + DC*ISI + RH*Rain
 
 ```shell script
 # simplified model
-nolin_model2 <- lm(Area ~ .+ I(Temperature^2) + I(FFMC^2) + I(Wind^2) + DC*ISI + RH*Rain + I(ISI^2)*Wind
+nolin_model2 <- lm(Area ~ .+ I(Temperature^2) + I(FFMC^2) 
+                + I(Wind^2) + DC*ISI + RH*Rain + I(ISI^2)*Wind
                 -ISI -RH -DMC -Rain -Wind, data = fire_norm) 
 summary(nolin_model2)
 ```
