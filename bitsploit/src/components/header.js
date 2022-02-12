@@ -10,9 +10,9 @@ const Header = ({ siteTitle }) => (
         <Link to="/">{siteTitle}</Link>
     </h1>
 
-    <Navbar className={'blogNav'}>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar className={'blogNav'} expand={'md'}>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
             <Nav.Link className={'blogNavLink'} as={Link} to="/">HOME</Nav.Link>
             <Nav.Link className={'blogNavLink'} as={Link} to="/about">ABOUT</Nav.Link>

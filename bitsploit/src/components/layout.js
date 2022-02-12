@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Row, Col } from 'react-bootstrap';
 import "fontsource-euphoria-script";
 import "fontsource-quicksand";
 import "fontsource-lato";
@@ -30,7 +31,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+        <Row><Col>
+            <Header siteTitle={data.site.siteMetadata.title} />
+        </Col></Row>
       <div className={'blogMain'}>
         <main>{children}</main>
       </div>

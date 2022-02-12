@@ -630,7 +630,7 @@ pre tt:after {
 }
 
 .blogMain {
-  background-color: rgba(158, 209, 200, 0.04);
+  background-color: rgba(158, 209, 200, 0.1);
   padding: 5% 10%;
   /*margin: 5% auto 5% auto;*/
   /*max-width: 80%;*/
@@ -867,6 +867,16 @@ pre tt:after {
 
 .postContent>h6 {
   text-align: center;
+}
+
+.postContent>p>a {
+  color: #414141;
+  text-decoration: underline;
+}
+
+.postContent>h6>em>a {
+  color: #414141;
+  text-decoration: underline;
 }
 
 .gatsby-highlight {

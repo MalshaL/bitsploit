@@ -16,7 +16,7 @@ const PostListPage = ({data, pageContext}) => {
                     pageContext={pageContext}/>
                 <Sidebar/>
             </div>
-            <SEO title="Posts" />
+            <SEO title="Bitsploit" />
         </Layout>
     )
 }
