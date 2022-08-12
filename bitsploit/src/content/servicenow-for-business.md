@@ -1,5 +1,5 @@
 ---
-title: How ServiceNow Applications can accelerate the Growth of your Business (Medium)
+title: How ServiceNow can accelerate the Growth of your Business (Medium)
 date: 2021-02-24
 path: /servicenow-for-businesses
 excerpt: What makes ServiceNow an ideal platform to build your business application.

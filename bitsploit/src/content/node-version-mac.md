@@ -6,7 +6,7 @@ excerpt: Manage different Node versions on a Mac using NVM instead of Homebrew.
 image: https://user-images.githubusercontent.com/10103699/151214846-d093f1fd-f471-43da-a670-f7055bfc1880.jpeg
 tags: 
     - Node.js
-    - How To
+    - How to
 ---
 ![intro-img](https://user-images.githubusercontent.com/10103699/151214846-d093f1fd-f471-43da-a670-f7055bfc1880.jpeg)
 

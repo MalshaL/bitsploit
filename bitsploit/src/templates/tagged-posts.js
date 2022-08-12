@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar";
 import PostList from "../components/postlist";
+import {Col, Row} from "antd";
 
 
 const TaggedPostListPage = ({data, pageContext}) => {
@@ -11,12 +12,16 @@ const TaggedPostListPage = ({data, pageContext}) => {
     return (
         <Layout>
             <h3>Posts tagged: {pageContext.tag}</h3>
-            <div className="gridContainer">
+            <Row gutter={[{xs: 8, sm: 16, md: 24, lg: 32}, {xs: 8, sm: 16, md: 24, lg: 32}]}>
+                <Col xs={24} sm={24} md={12} lg={16} xl={16}>
                 <PostList
                     posts={posts}
                     pageContext={pageContext}/>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
                 <Sidebar/>
-            </div>
+                </Col>
+            </Row>
             <SEO title="Posts" />
         </Layout>
     )

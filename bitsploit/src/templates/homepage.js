@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import {Col, Row} from "antd";
 import Layout from "../components/layout";
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar";
@@ -10,12 +11,18 @@ const PostListPage = ({data, pageContext}) => {
     const { edges: posts } = data.allMarkdownRemark
     return (
         <Layout>
-            <div className="gridContainer">
-                <PostList
+            {/*<div className="gridContainer">*/}
+            <Row gutter={[{xs: 8, sm: 16, md: 24, lg: 32}, {xs: 8, sm: 16, md: 24, lg: 32}]}>
+                <Col xs={24} sm={24} md={12} lg={16} xl={16}>
+                    <PostList
                     posts={posts}
                     pageContext={pageContext}/>
-                <Sidebar/>
-            </div>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                    <Sidebar/>
+                </Col>
+            </Row>
+            {/*</div>*/}
             <SEO title="Bitsploit" />
         </Layout>
     )

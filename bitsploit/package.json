@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "antd": "^4.22.4",
     "bootstrap": "^4.5.2",
     "flexsearch": "^0.6.32",
     "fontsource-annie-use-your-telescope": "^3.0.9",
