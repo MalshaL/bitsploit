@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
             <Nav.Link className={'blogNavLink'} as={Link} to="/">HOME</Nav.Link>
-            <Nav.Link className={'blogNavLink'} as={Link} to="/about">ABOUT</Nav.Link>
+            {/*<Nav.Link className={'blogNavLink'} as={Link} to="/about">ABOUT</Nav.Link>*/}
         </Nav>
         </Navbar.Collapse>
             <SocialIcons className={'headerIcons'}/>

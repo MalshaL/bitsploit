@@ -16,7 +16,7 @@ export default function PostList({posts, pageContext}) {
                             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
                             <div className="postPreview" key={post.id}>
                                 <Link to={post.frontmatter.path}>
-                                    <img className="postPreviewImage" src={post.frontmatter.image} alt="Post Image"/>
+                                    <img className="postPreviewImage" src={post.frontmatter.image} alt="Post"/>
                                     <div className="postPreviewContent">
                                         <Link to={post.frontmatter.path}
                                               className={'postPreviewTitle'}>{post.frontmatter.title}</Link>
