@@ -1,3 +1,4 @@
+<!---
 ---
 title: The Sun Warriors - A Game
 date: 2016-04-29
@@ -15,3 +16,4 @@ multiplayer mode and an AI mode. Along with the game, we developed a website fea
 The project incorporated the technologies C#.NET, PHP, CSS, HTML, JavaScript and Adobe Photoshop.
 
 [View Project on GitHub](https://github.com/MalshaL/sun-warriors-game)
+-->

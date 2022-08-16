@@ -709,8 +709,8 @@ pre tt:after {
 .postPreview {
   background-color: rgba(255, 255, 255, 0.7);
   /*height: 475px;*/
-  min-height: 60vh;
-  max-height: 60vh;
+  min-height: 65vh;
+  max-height: 65vh;
   overflow: hidden;
   /*min-width: 380px;*/
   /*border: 2px solid #eaeaea;*/
@@ -775,7 +775,7 @@ pre tt:after {
 }
 
 .postPreviewExcerpt{
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Georgia, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
@@ -838,7 +838,7 @@ pre tt:after {
   font-size: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-rendering: optimizeLegibility;
   /*font-size: 1.6rem;*/
   margin-bottom: 0.5rem;
@@ -861,13 +861,13 @@ pre tt:after {
 }
 
 .postContent {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+  font-family: Georgia, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
   helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   font-weight: 400;
 }
 
 .postContent>p>img {
-  max-width: 100%;
+  max-width: 60vw;
   display: block;
   margin-left: auto;
   margin-right: auto;
