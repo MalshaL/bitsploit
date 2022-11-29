@@ -867,7 +867,7 @@ pre tt:after {
 }
 
 .postContent>p>img {
-  max-width: 60vw;
+  max-width: 50vw;
   display: block;
   margin-left: auto;
   margin-right: auto;

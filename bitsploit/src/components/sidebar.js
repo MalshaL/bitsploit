@@ -33,7 +33,7 @@ export default function Sidebar() {
                          alt="author"/>
                 </div>
                 <p className={'authorHeading'}>Malsha Ranawaka</p>
-                <p className={'sidebarContent'}>Passionate in Software Engineering,
+                <p className={'sidebarContent'}>Passionate in Data Engineering,
                     writing content to make learning easy and fun.</p>
                 <SocialIcons/>
             </div>

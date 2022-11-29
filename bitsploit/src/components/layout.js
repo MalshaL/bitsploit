@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import {useStaticQuery, graphql} from "gatsby"
 import 'antd/dist/antd.min.css';
 import "fontsource-euphoria-script";
 import "fontsource-quicksand";
@@ -18,8 +18,9 @@ import Footer from "./footer"
 import "./layout.css"
 import "./prism-okaidia-modified.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+const Layout = ({children}) => {
+    // query to get the site title stored in gatsby-config.js
+    const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -27,21 +28,21 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+    `)
 
-  return (
-    <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-      <div className={'blogMain'}>
-        <main>{children}</main>
-      </div>
-        <Footer siteTitle={data.site.siteMetadata.title} />
-    </>
-  )
+    return (
+        <>
+            <Header siteTitle={data.site.siteMetadata.title}/>
+            <div className={'blogMain'}>
+                <main>{children}</main>
+            </div>
+            <Footer siteTitle={data.site.siteMetadata.title}/>
+        </>
+    )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout
