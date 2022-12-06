@@ -414,6 +414,7 @@ was filled in one month, the employee may start working on a later date.
 
 And that's it! That's how I generated my own dataset so that I can use it for my personal project. 
 
-Check my [GitHub repository](https://github.com/MalshaL/HR-data-visualisation) to see the complete code for this project.
+Check my [GitHub repository](https://github.com/MalshaL/HR-data-visualisation) to see the complete code for 
+this project, and view the generated dataset in [Kaggle](https://www.kaggle.com/datasets/malsha/employee-hiring-data).
 
 Have fun with Python!
