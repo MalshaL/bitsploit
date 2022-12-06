@@ -1,8 +1,8 @@
 ---
-title: Generate your own dataset for personal projects
+title: Build your own dataset for personal projects
 date: 2022-11-18
 path: /generate-your-own-dataset
-excerpt: In this post, we go through a simple method to generate your own dataset for a personal project.
+excerpt: In this post, we go through a simple method to build your own dataset for a personal project.
 image: https://user-images.githubusercontent.com/10103699/202613539-3e9bcbd9-644e-4dd9-9722-05213ead5eea.jpg
 tags: 
     - Datasets
@@ -56,17 +56,14 @@ coming from the same company, the vacancy dataset will need to share some inform
 
 These are the columns from our first data source:
 
-![data-gen3](https://user-images.githubusercontent.com/10103699/204405144-7b6cddb7-f9f9-4079-8340-bfb6d0f0e879.png)
+![data-gen3](https://user-images.githubusercontent.com/10103699/205765871-e0ddcf10-ff3c-4f7b-a312-6740aa5605e6.png)
 ###### *Data Description for the first dataset*
 
 From these variables, I've chosen to use the 'FP' and 'BU Region' columns to indicate vacancies for 
 full/part-time positions in different BU regions.
 
-### Timeframe for the dataset
+Let's also have a look at the count of new hires (those who started working, not just hired) from the Employee dataset.
 
-Next, let's look at the time duration for which we will be generating data. As I'll be using the data within January 
-2018 to December 2018 from the first data source, I've defined the same time period for vacancy dataset as well.
- 
 In my Python notebook, I first import the packages.
 
 ```python
@@ -74,14 +71,71 @@ import pandas as pd
 import numpy as np
 import random
 import calendar
+import glob
+import os
+
+import matplotlib.pyplot as plt
+%matplotlib inline
 ```
 
-And define the number of vacancies for the year, and start and end dates for the timeframe.
+And plot the number of new hires:
 
 ```python
-n_vacancies = 200
-min_date = pd.to_datetime('2018/01/01')
-max_date = pd.to_datetime('2018/12/31')
+# plot new hire count in employee data
+
+# get current working directory
+cwd = os.path.abspath(os.getcwd())
+# get all files in directory
+files = glob.glob(cwd + "/Employee data/*")
+
+months = []
+newHires = []
+
+for file in files:
+    df = pd.read_csv(file)
+    # get the count of new hires
+    newHires.append(df['isNewHire'].sum())
+    # get the month for the file
+    months.append(pd.to_datetime(df['date'][0], dayfirst=True).month)
+                 
+# sort new hires based on month
+newHires = [x for _,x in sorted(zip(months, newHires))]
+months = sorted(months)
+# replace month numbers with names
+months = [calendar.month_name[i] for i in months]
+
+# plot new hires
+fig, ax = plt.subplots(figsize=(15,8))
+bars = ax.bar(months, newHires)
+# add data labels
+for i,v in enumerate(newHires):
+    ax.text(i,v+20, int(v), ha='center')
+plt.title('New Hires')
+plt.show()
+
+print('All new starters for the year: ', sum(newHires))
+```
+
+which gives us the graph below:
+
+![data-gen31](https://user-images.githubusercontent.com/10103699/205767315-0f06ff37-d228-477b-ad58-be72a56ef611.png)
+###### *New hire count from the first dataset*
+
+As you can see, there is some variation in the total of new hires over the year, and the total new hire count is at 19073.
+To keep the counts similar, we'll create 20000 vacancies in our vacancy dataset.
+
+### Timeframe for the dataset
+
+Next, let's look at the time duration for which we will be generating data. As I'll be using the data within January 
+2014 to December 2014 from the first data source, I've defined the same time period for vacancy dataset as well.
+
+Let's define the number of vacancies for the year, and start and end dates for the timeframe.
+
+```python
+n_vacancies = 20000
+year = '2014'
+min_date = pd.to_datetime(year + '/01/01')
+max_date = pd.to_datetime(year + '/12/31')
 ```
 
 ### Data Generation
@@ -116,8 +170,9 @@ def generate_vacancy_data(n_vacancies):
     # create random ids for each row
     vacancy_df['ID'] = random.sample(range(1,n_vacancies+1), n_vacancies)
     # randomly add values for FP and BU Region columns
-    vacancy_df['FP'] = np.random.choice(['FT','PT'], n_vacancies, replace=True)
-    regions = ['North', 'South', 'East', 'West', 'Central', 'Midwest', 'Northwest']
+    vacancy_df['FP'] = np.random.choice(['F','P'], n_vacancies, replace=True)
+    regions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+                              19, 20, 21, 22, 23, 24, 94, 95, 96, 97, 98, 99]
     vacancy_df['BU Region'] = np.random.choice(regions, n_vacancies, replace=True)
 ```
 
@@ -174,8 +229,9 @@ def generate_vacancy_data(n_vacancies):
     # create random ids for each row
     vacancy_df['ID'] = random.sample(range(1,n_vacancies+1), n_vacancies)
     # randomly add values for FP and BU Region columns
-    vacancy_df['FP'] = np.random.choice(['FT','PT'], n_vacancies, replace=True)
-    regions = ['North', 'South', 'East', 'West', 'Central', 'Midwest', 'Northwest']
+    vacancy_df['FP'] = np.random.choice(['F','P'], n_vacancies, replace=True)
+    regions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+                              19, 20, 21, 22, 23, 24, 94, 95, 96, 97, 98, 99]
     vacancy_df['BU Region'] = np.random.choice(regions, n_vacancies, replace=True)
     
     # get the number of days in the time period
@@ -218,7 +274,7 @@ vacancy_df = generate_vacancy_data(n_vacancies)
 vacancy_df
 ```
 
-![data-gen8](https://user-images.githubusercontent.com/10103699/204436548-6b90b7bb-edb8-4654-a2e3-1a8b46bac25e.png)
+![data-gen8](https://user-images.githubusercontent.com/10103699/205769073-e9d210b6-bf83-4790-9e8e-d35e537392e0.png)
 ###### *Vacancy data generation output*
 
 #### Why I'm getting a different output?
@@ -257,9 +313,9 @@ I'll create a new function for this purpose, and run it for each month in our ti
 
 def create_monthly_df(month):
     # get start date for the month
-    month_start = pd.to_datetime('2018/'+str(month)+'/01')
+    month_start = pd.to_datetime(year + '/'+str(month)+'/01')
     # get end date for the month
-    month_end = month_start + pd.to_timedelta(calendar.monthrange(2018, month)[1]-1, unit='d')
+    month_end = month_start + pd.to_timedelta(calendar.monthrange(int(year), month)[1]-1, unit='d')
     
     # create monthly data
     monthly_df = vacancy_df.copy()
@@ -287,7 +343,7 @@ def create_monthly_df(month):
     monthly_df = monthly_df.fillna('')
     
     # write to csv
-    file_name = '2018-'+str(month)+'.csv'
+    file_name = 'Vacancy data/' +calendar.month_name[month] + '-' + year + '.csv'
     monthly_df.to_csv(file_name, index=False)
 
 
@@ -296,17 +352,68 @@ for i in range(12):
     create_monthly_df(i+1)
 ```
 
-As you can see, we have a new `Status` column in the output for 2018 April.
+As you can see, we have a new `Status` column in the output for 2014 April.
 
-![data-gen9](https://user-images.githubusercontent.com/10103699/204433142-74f69e26-e2d9-46f7-b3c0-33425b7b6e3f.png)
-###### *Portion of the final vacancy dataset output for 2018 April*
+![data-gen9](https://user-images.githubusercontent.com/10103699/205770015-add3cd6b-7214-45c9-8f28-4cc01ba618e7.png)
+###### *First six rows of the final vacancy dataset output for 2014 April*
 
 If you tried this out, you will have 12 csv files created for vacancy data in each month.
 <br> Each file shows the status of the vacancies at the end of the month.
 
-![data-gen10](https://user-images.githubusercontent.com/10103699/204432814-44f9465e-82fa-4926-b3b9-468045985519.png)
+![data-gen10](https://user-images.githubusercontent.com/10103699/205769604-a6489b54-7b06-4535-ae82-ea91986e4402.png)
 ###### *Generated data files*
 
+I had a brief look at the count of filled roles over the year using the generated data.
+
+```python
+# plot filled roles in vacancy data
+
+# get all files in directory
+vac_files = glob.glob(cwd + "/Vacancy data/*")
+
+months = []
+filledRoles = []
+
+for file in vac_files:
+    df = pd.read_csv(file)
+    # get the count of filled roles
+    filledRoles.append(df[df['Status']=='Filled']['ID'].count())
+    # get the month for the file
+    months.append(pd.to_datetime('1-'+file.split('/')[-1].split('.')[0], dayfirst=True).month)
+                 
+# sort filled roles based on month
+filledRoles = [x for _,x in sorted(zip(months, filledRoles))]
+months = sorted(months)
+# replace month numbers with names
+months = [calendar.month_name[i] for i in months]
+
+# plot new hires
+fig, ax = plt.subplots(figsize=(15,8))
+bars = ax.bar(months, filledRoles)
+# add data labels
+for i,v in enumerate(filledRoles):
+    ax.text(i,v+20, int(v), ha='center')
+plt.title('Filled Roles')
+plt.show()
+
+print('All filled roles for the year: ', sum(filledRoles))
+```
+
+The output shows that we have a fairly similar distribution over the year as I used random sampling to generate the data.
+
+![data-gen11](https://user-images.githubusercontent.com/10103699/205770665-3ccfede3-f062-4006-8224-bb73c3010e36.png)
+###### *Total number of filled roles using generated data*
+
+Although the distribution is different, we can use the generated data to explore more aspects related to the hiring 
+process - such as time taken to source candidates and time taken to fill roles.
+
+You may be wondering about the different numbers for total hires from the first dataset, and the total filled 
+roles from generated data. Usually in companies, these two values tend to be different because although a role 
+was filled in one month, the employee may start working on a later date.
+
+
 And that's it! That's how I generated my own dataset so that I can use it for my personal project. 
+
 Check my [GitHub repository](https://github.com/MalshaL/HR-data-visualisation) to see the complete code for this project.
- 
+
+Have fun with Python!
