@@ -19,19 +19,19 @@ I created a dashboard to visualize this data using Power BI. You can see the rep
 action here in the [Power BI Data Stories gallery](https://community.fabric.microsoft.com/t5/Data-Stories-Gallery/HR-Analytics/td-p/3369774). 
 
 This detailed dashboard has a summary page to cater to a high level overview on HR KPIs, 
-and three other pages to elaborate on key areas- headcount, terminations and recruitment. 
+and three other pages to elaborate on key areas- headcount, turnover and recruitment. 
 
 This will enable the HR team to obtain key metrics quickly, get a detailed view into how different 
 metrics perform and decide on areas for improvement. 
 
-![hr-db2](https://github.com/MalshaL/bitsploit/assets/10103699/43bf297d-9cbd-4a07-8610-657460bc3e2a)
+![hr-db2](https://github.com/MalshaL/bitsploit/assets/10103699/26323818-9938-4b25-9c64-8e7c7187085f)
 ###### *HR Analytics Dashboard - Summary*
 
-![hr-db3](https://github.com/MalshaL/bitsploit/assets/10103699/435fa80d-f814-4a5e-931c-b617032d5233)
+![hr-db3](https://github.com/MalshaL/bitsploit/assets/10103699/fb4f6f7b-99a7-4ad4-9165-87f381b8fbbd)
 ###### *HR Analytics Dashboard - Headcount*
 
-![hr-db4](https://github.com/MalshaL/bitsploit/assets/10103699/9e00eadb-ec3e-48e1-a173-f02f752354b3)
-###### *HR Analytics Dashboard - Terminations*
+![hr-db4](https://github.com/MalshaL/bitsploit/assets/10103699/e2c43341-3673-4b9f-9b91-37ef409daffc)
+###### *HR Analytics Dashboard - Turnover*
 
-![hr-db5](https://github.com/MalshaL/bitsploit/assets/10103699/a3883f46-a043-42e0-af5e-53c6a2049009)
+![hr-db5](https://github.com/MalshaL/bitsploit/assets/10103699/5a1a8046-ab69-4669-bbb2-91034f11aea1)
 ###### *HR Analytics Dashboard - Recruitment*
