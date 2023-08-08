@@ -1,6 +1,6 @@
 ---
 title: How to get data from Power BI samples for Practice
-date: 2022-12-06
+date: 2022-12-05
 path: /get-data-for-practice
 excerpt: In this post, we look at how to get the data from Power BI samples for practice.
 image: https://user-images.githubusercontent.com/10103699/205779305-ddf2b7b1-1e5b-4aa0-86fe-90ddfa85ee7a.jpg
