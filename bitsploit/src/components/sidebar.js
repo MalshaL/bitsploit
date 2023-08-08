@@ -33,8 +33,8 @@ export default function Sidebar() {
                          alt="author"/>
                 </div>
                 <p className={'authorHeading'}>Malsha Ranawaka</p>
-                <p className={'sidebarContent'}>Passionate in Data Engineering,
-                    writing content to make learning easy and fun.</p>
+                <p className={'sidebarContent'}>Passionate in Data Engineering and Analytics,
+                    sharing about exciting projects I work on.</p>
                 <SocialIcons/>
             </div>
             <div className="tagCloud">
