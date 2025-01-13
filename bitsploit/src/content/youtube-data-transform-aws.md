@@ -3,7 +3,7 @@ title: Transform and Load YouTube data in S3 using AWS Glue
 date: 2025-01-12
 path: /youtube-data-transform-aws
 excerpt: In this post, we transform YouTube data in Amazon S3 using AWS Glue.
-image: 
+image: https://github.com/user-attachments/assets/62e136c7-0849-4efc-a885-8e37b365fa84
 tags: 
     - Project
     - AWS
@@ -16,7 +16,7 @@ In the previous post [here](https://malshal.github.io/bitsploit/get-youtube-data
 
 In this post, let's continue the project by transforming the raw data in S3 using AWS Glue, and store the data in RedShift, so that it can be used for anlysis. 
 
-1. Use AWS Glue Crawler to build the Glue database in Glue Data Catalog
+### 1. Use AWS Glue Crawler to build the Glue database in Glue Data Catalog
 
 AWS Glue Crawler is used to build metadata tables for data tables in a data store. These metadata tables are then stored in a Glue database.
 It's worthwhile noting that the crawler doesn't move the data itself from it's original location, but only creates a pointer to the data so that they can be referenced 
@@ -57,7 +57,7 @@ Each table will have the schema automatically inferred by the crawler.
 
 ![8](https://github.com/user-attachments/assets/7b090971-4de5-4805-b92c-e7ccd2508b71)
 
-2. Build the ETL job using AWS Glue
+### 2. Build the ETL job using AWS Glue
 
 Now that we have tables setup in the Glue Data Catalog, let's build the ETL job to transform the raw data into the format required for analysis.
 
@@ -126,7 +126,7 @@ If the job run succeeds, the `output` folder in S3 will contain csv files with t
 
 ![16](https://github.com/user-attachments/assets/3b23bf5a-df84-4aa6-ad75-8aa34e9a0025)
 
-3. Set up Redshift Serverless to store data
+### 3. Set up Redshift Serverless to store data
 
 FIrst, create a `temp` folder in S3 to be used as a temporary storage location in S3 when Glue jobs interact with Amazon Redshift. Glue job will use this folder for data staging and intermediate processing during data transfers between Glue and Redshift.
 
@@ -196,7 +196,7 @@ Right-click to Refresh and view the tables created in the database.
 
 ![24](https://github.com/user-attachments/assets/f7608435-a4e7-403e-b1be-4737123c0fc1)
 
-4. Create connection from AWS Glue to Redshift to write data
+### 4. Create connection from AWS Glue to Redshift to write data
 
 To connect Glue with Redshift, we need to setup a Glue connection that will connect using JDBC.
 
@@ -291,7 +291,7 @@ Head to the Redshift Query Editor to view the data in your tables.
 
 ![33](https://github.com/user-attachments/assets/663e0c24-7486-4247-ab54-9fd06d5ccf57)
 
-5. Automate ETL pipeline using AWS Step Functions
+### 5. Automate ETL pipeline using AWS Step Functions
 
 In this section, let's use AWS Step Functions to build and do a daily run of the complete ETL pipeline, from data ingestion using Lambda and storing in S3, to transforming in Glue and storing in Redshift. We'll use the existing AWS Eventbridge rule to trigger the Step function, so that it runs daily at 12.30 am AEST.
 
@@ -321,7 +321,7 @@ Next, head to Eventbridge and select the rule we creaed previously to run Lambda
 
 Now, the ETL process should run evryday and store the new data in the Redshift tables.
 
-6. Setup email updates for the ETL process
+### 6. Setup email updates for the ETL process
 
 Head to SNS service and create a Standard topic.
 

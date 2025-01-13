@@ -3,14 +3,16 @@ title: Extract and load YouTube data in S3 using AWS Lambda
 date: 2024-12-11
 path: /get-youtube-data-aws
 excerpt: In this post, we load YouTube data into Amazon S3 using AWS Lambda.
-image: 
+image: https://github.com/user-attachments/assets/05e115e6-d836-4d8e-b8d6-887f5735bb6b
 tags: 
     - Project
     - AWS
     - ETL
     - AWS Lambda
 ---
-![aws-yt-1](https://github.com/user-attachments/assets/05e115e6-d836-4d8e-b8d6-887f5735bb6b)
+
+<img style="max-width: 50%; display: block; margin-left: auto; margin-right: auto" 
+alt="1" src="https://github.com/user-attachments/assets/05e115e6-d836-4d8e-b8d6-887f5735bb6b"/>
 
 In this post, let's build a project to use AWS Lambda functions to load data from YouTube, and store it in an S3 bucket.
 
@@ -23,47 +25,57 @@ What are the key factors that influence video engagement (likes, comments, and s
 The overall architecture of the solution we'll implement is outlined below.
 In this post, we'll work on the first part of extracting raw data in to the S3 bucket.
 
+![1-1](https://github.com/user-attachments/assets/62e136c7-0849-4efc-a885-8e37b365fa84)
+
 It's worthwhile to have some idea about why we've chosen AWS Lambda and S3 among the many services available on the AWS platform.
 Being serverless, Lambda functions are easy to build and deploy. Therefore, it's more suitable for a relatively shorter script to run as the one for getting and storing data. It also falls within the [15 minute maximum timeout value](https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html#:~:text=maximum%20value%20of%20900%20seconds%20(15%20minutes).) for Lambda functions.
 
 We're using an S3 bucket to store the raw data as it supports open data formats, and is scalable, durable, and cost-effective.
 
 
-1. Getting started with YouTube API
+### 1. Getting started with YouTube API
 
 The first step is to start using the YouTube API to get the data we are looking for using Python.
 
 YouTube has a helpful [guide](https://developers.google.com/youtube/v3/getting-started) on getting started with the API. 
 
 Create a new project in [Google Developers Console](https://console.developers.google.com/). Name the project, I've called it as `youtube-etl`.
+
 ![aws-yt-2](https://github.com/user-attachments/assets/66cae20e-af56-469a-918e-ca404e204468)
 
 Create credentials for the project. Because we're not using private data, we're choosing to create an API key.
+
 ![aws-yt-3](https://github.com/user-attachments/assets/d1189edb-0d2b-46be-9f40-279ad1901d4e)
 
 Head to API Console to enable the YouTube API.
+
 ![aws-yt-4](https://github.com/user-attachments/assets/5a3c0695-5776-484a-b7eb-d51a8737ee2f)
 
 Enable the `YouTube Data API v3` for the project.
+
 ![aws-yt-5](https://github.com/user-attachments/assets/93ed2887-6bd1-4016-9fc6-8b7d3ca61b80)
 
 It should now appear in the list of enabled APIs.
+
 <img style="max-width: 50%; display: block; margin-left: auto; margin-right: auto" 
 alt="6" src="https://github.com/user-attachments/assets/5959ffe2-e421-4ef5-b7aa-e9c009eda45b"/>
 
 Back in the Credentials page, restrict the API key we created to only use the YouTube API.
+
 <img style="max-width: 40%; display: block; margin-left: auto; margin-right: auto" 
 alt="7" src="https://github.com/user-attachments/assets/a4c6e413-bd42-41a1-94be-634f094a7666"/>
 
 YouTube API has a daily limit of 10000 quota units. You can see this limit on Enabled APIs and Services > Youtube Data API -> Quotas and system limits.
+
 ![aws-yt-8](https://github.com/user-attachments/assets/22dcae03-803b-454e-a2d4-7cf96d37941c)
 
 ###### *Data Model for the dashboard*
 
 The [API Reference](https://developers.google.com/youtube/v3/docs/videos/list) has the quota used for each request.
+
 ![aws-yt-9](https://github.com/user-attachments/assets/263491e9-5b87-40e9-8de6-19fe38f556e8)
 
-2. Using the YouTube API
+### 2. Using the YouTube API
 
 Before using the API, there're a few terms to get to know in order to use the API effectively.
 
@@ -77,6 +89,7 @@ Let's try using `curl` to send a simple request to get the video categories.
 The YouTube API has a [`videoCategories:List`](https://developers.google.com/youtube/v3/docs/videoCategories/list) endpoint. 
 
 You can use the API Explorer in the same page to help build your `curl` request. Click to view it in full screen mode.
+
 ![aws-yt-10](https://github.com/user-attachments/assets/0d21a30a-af5f-4d6e-b86b-1d4509d3bae9)
 
 Use `snippet` for the `part` parameter and `US` as the region code. The API has different region codes for different countries, and we'll have a look based on `US` in this example.
@@ -94,7 +107,7 @@ The response will contain a list of video categories in list format.
 <img style="max-width: 30%; display: block; margin-left: auto; margin-right: auto" 
 alt="12" src="https://github.com/user-attachments/assets/2e9386e1-311d-4343-a9d0-087beefaa2f6"/>
 
-3. Using the YouTube API to get data for the project
+### 3. Using the YouTube API to get data for the project
 
 As we now have some idea about using the API, let's try to build the request for the data we want for this project. 
 
@@ -120,7 +133,7 @@ The response contains a list of videos with their ids and other metadata.
 <img style="max-width: 30%; display: block; margin-left: auto; margin-right: auto" 
 alt="13" src="https://github.com/user-attachments/assets/4b64682a-ed4d-405c-8f42-d13b88ca9e7c"/>
 
-4. Use Python to build the API request
+### 4. Use Python to build the API request
 
 Now, let's use Python to build the above request. 
 
@@ -147,7 +160,7 @@ When you create the function, you'll see the code editor window where you can pu
 Let's try running the sample function defined. Head to the `Test` tab and click on Test button to execute the function.
 The function will execute and create CloudWatch logs. Expand to view the output and logs.
 
-![aws-yt-18](https://github.com/user-attachments/assets/5518dca8-c5d9-4629-ba24-a9d00765a620)
+![aws-yt-18](https://github.com/user-attachments/assets/caea34a7-e9ae-4189-9994-2e1648eae0fc)
 
 Let's head back to the IDE/Jupyter notebook and write the Python code to call the API.
 
@@ -268,11 +281,12 @@ The output will be displayed in the window.
 
 ![aws-yt-24](https://github.com/user-attachments/assets/cf1ec7da-3e96-434a-bdf4-7794fa3a0fbd)
 
-5. Store the raw data in S3
+### 5. Store the raw data in S3
 
 Head to S3 in the AWS Console and create a new S3 bucket to store data.
 
-![25](https://github.com/user-attachments/assets/6e974aad-060e-41ec-9401-be08d5e52f40)
+<img style="max-width: 30%; display: block; margin-left: auto; margin-right: auto" 
+alt="25" src="https://github.com/user-attachments/assets/6e974aad-060e-41ec-9401-be08d5e52f40"/>
 
 In the Python code in the Lambda function, replace the json output with the below.
 We're using partitions to store the data in S3 to make data reads more efficient. In this instance, we're using the `collection_date` to partition the 
@@ -304,7 +318,7 @@ data into separate folders. S3 will create folders as `collection_date=date` so 
     s3 = boto3.client('s3')
 
     # use collection_date to partition
-    bucket_name = 'youtube-etl-data'
+    bucket_name = '<S3 Bucket name>'
     parquet_file_key = f'raw/videos/collection_date={search_date}/{search_date}.parquet'
 
     # write to parquet file in memory
@@ -363,18 +377,19 @@ In the resource selection, select the S3 bucket created earlier. This should add
 				"s3:GetObject"
 			],
 			"Resource": [
-				"arn:aws:s3:::<bucket_name>>/*"
+				"arn:aws:s3:::<bucket_name>/*"
 			]
 		}
 ```
 
 Rerun the Lambda function. If you followed all the steps, the parquet file should be created in the S3 bucket.
 
-![30](https://github.com/user-attachments/assets/00a1a873-06c9-483b-8f71-72d6d34d7621)
+<img style="max-width: 30%; display: block; margin-left: auto; margin-right: auto" 
+alt="30" src="https://github.com/user-attachments/assets/00a1a873-06c9-483b-8f71-72d6d34d7621"/>
 
 Congratulations on reaching this point! You've done a great job!!
 
-6. Enable the job to run daily using Amazon EventBridge
+### 6. Enable the job to run daily using Amazon EventBridge
 
 Before setting up the daily schedule for the Lambda function, we need to update the `publishedBefore` and `publishedAfter` dates to change dynamically in the first API call.
 
@@ -413,7 +428,7 @@ Head back to the Lambda function to verify that the trigger has been added.
 
 7. Read data from S3 to get data from API
 
-Let's create a second Lambda funciton as `getYoutubeStats`. 
+Let's create a second Lambda function as `getYoutubeStats`. 
 In the Lambda function, let's get all the data files stored in S3:
 
 ``` python
@@ -442,7 +457,7 @@ To run the process, update the IAM role related with this new Lambda function wi
 				"s3:PutObject"
 			],
 			"Resource": [
-				"arn:aws:s3:::youtube-etl-data/*"
+				"arn:aws:s3:::<bucket_name>/*"
 			]
 		},
 		{
@@ -451,7 +466,7 @@ To run the process, update the IAM role related with this new Lambda function wi
 				"s3:ListBucket"
 			],
 			"Resource": [
-				"arn:aws:s3:::youtube-etl-data"
+				"arn:aws:s3:::<bucket_name>"
 			]
 		}
 ```
@@ -496,7 +511,7 @@ def lambda_handler(event, context):
     oldest_collection_date = datetime.strptime((today - timedelta(7)).strftime('%Y-%m-%d'), '%Y-%m-%d')
 
     # get data for last 7 days
-    bucket_name = '<bucket_name>>'
+    bucket_name = '<bucket_name>'
     videos = []
 
     for day in search_date_list:
@@ -572,4 +587,7 @@ Finally, add the new function to be triggered with the same EventBridge rule.
 ![35](https://github.com/user-attachments/assets/a5d6ccfc-2cd7-4a5d-ae94-b57bc7bb5c2e)
 
 Now we have setup the data extract Lambda functions to get data using the YouTube API!
+
 Congratulations on reaching this far!
+
+Read the next steps of the project - using AWS Glue to transform data and store in Redshift - here in [Part 2](ttps://malshal.github.io/bitsploit/youtube-data-transform-aws).
