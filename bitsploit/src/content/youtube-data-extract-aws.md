@@ -14,6 +14,8 @@ tags:
 
 In this post, let's build a project to use AWS Lambda functions to load data from YouTube, and store it in an S3 bucket.
 
+This project can be found on [GitHub](https://github.com/MalshaL/youtube-data-analysis/tree/master) as well.
+
 To make the project more interesting, let's define the problem we're trying to solve using YouTube data.
 
 What are the key factors that influence video engagement (likes, comments, and shares) and audience retention (watch time and drop-off rates) on YouTube, and how can creators optimize their content to maximize these metrics?
