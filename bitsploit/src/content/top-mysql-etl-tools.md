@@ -5,7 +5,7 @@ path: /top-9-mysql-etl-tools
 excerpt: In this post, we've put together a list of top ETL tools focusing on MySQL data pipelines.
 image: https://user-images.githubusercontent.com/10103699/151208562-5acfed62-9139-42aa-a7b8-e2c3df69bab4.png
 tags: 
-    - ELT
+    - ETL
     - MySQL
     - Data Integration
 ---

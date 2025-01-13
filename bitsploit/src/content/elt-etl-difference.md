@@ -6,6 +6,7 @@ excerpt: In this post, we'll look into what marks the difference between ETL and
 image: https://user-images.githubusercontent.com/10103699/151209779-b867c4b0-9b92-457a-a08e-2b1ea8142d78.png
 tags: 
     - ETL
+    - ELT
     - Data Integration
 ---
 ![intro-img](https://user-images.githubusercontent.com/10103699/151209779-b867c4b0-9b92-457a-a08e-2b1ea8142d78.png)

@@ -6,6 +6,7 @@ excerpt: This post explains about the architectural differences of ETL and ELT d
 image: https://user-images.githubusercontent.com/10103699/151207490-69480d09-9bb9-41c3-ad01-bc7f32301416.png
 tags: 
     - ETL
+    - ELT
     - Data Integration
 ---
 ![intro-img](https://user-images.githubusercontent.com/10103699/151207490-69480d09-9bb9-41c3-ad01-bc7f32301416.png)
